@@ -1,0 +1,10 @@
+Standalone rancher-metadata docker image mapped on releases from
+https://github.com/rancher/rancher-metadata/releases
+
+Useful to test interaction with the rancher-metadata service outside of a
+proper Rancher installation.
+
+Copy /var/lib/cattle/etc/cattle/metadata/answers.yml from a running
+rancher/agent-instance container, then execute something along these lines:
+
+docker run -it -v $PWD:/answers/ camptocamp/rancher-metadata:v0.5.1 -answers /answers/answers.yml
